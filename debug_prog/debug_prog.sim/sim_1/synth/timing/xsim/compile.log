@@ -1,0 +1,18 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vhall/Desktop/debug_prog/debug_prog.sim/sim_1/synth/timing/xsim/design_1_wrapper_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2
+INFO: [VRFC 10-311] analyzing module design_2_cam_reg_config_0_0
+INFO: [VRFC 10-311] analyzing module design_2_cam_reg_config_0_0_cam_reg_config
+INFO: [VRFC 10-311] analyzing module design_2_camera_reg_0_0
+INFO: [VRFC 10-311] analyzing module design_2_camera_reg_0_0_camera_reg
+INFO: [VRFC 10-311] analyzing module design_2_processing_system7_0_0
+INFO: [VRFC 10-311] analyzing module design_2_processing_system7_0_0__processing_system7_v5_5_processing_system7
+INFO: [VRFC 10-311] analyzing module design_2_sccb_interface_0_0
+INFO: [VRFC 10-311] analyzing module design_2_sccb_interface_0_0_sccb_interface
+INFO: [VRFC 10-311] analyzing module design_2_wrapper
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vhall/Desktop/debug_prog/debug_prog.srcs/sources_1/new/camera_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module camera_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vhall/Desktop/debug_prog/debug_prog.srcs/sources_1/new/sccb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sccb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vhall/Desktop/debug_prog/debug_prog.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_wrapper

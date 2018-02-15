@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../new_board.srcs/sources_1/bd/design_1/ipshared/4868" \
+"../../../../new_board.srcs/sources_1/imports/new/cam_reg_config.v" \
+"../../../../new_board.srcs/sources_1/imports/new/camera_reg.v" \
+"../../../../new_board.srcs/sources_1/imports/new/sccb_interface.v" \
+"../../../../new_board.ip_user_files/bd/design_1/ip/design_1_cam_reg_config_0_0/sim/design_1_cam_reg_config_0_0.v" \
+"../../../../new_board.ip_user_files/bd/design_1/ip/design_1_camera_reg_0_0/sim/design_1_camera_reg_0_0.v" \
+"../../../../new_board.ip_user_files/bd/design_1/ip/design_1_sccb_interface_0_0/sim/design_1_sccb_interface_0_0.v" \
+"../../../../new_board.ip_user_files/bd/design_1/sim/design_1.v" \
+"../../../../new_board.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v" \
+"../../../../new_board.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v" \
+"../../../../new_board.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

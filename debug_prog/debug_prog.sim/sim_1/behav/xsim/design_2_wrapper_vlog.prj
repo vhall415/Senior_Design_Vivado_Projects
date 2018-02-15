@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../debug_prog.srcs/sources_1/bd/design_2/ipshared/ec67/hdl" --include "../../../../debug_prog.srcs/sources_1/bd/design_2/ipshared/02c8/hdl/verilog" --include "../../../../debug_prog.srcs/sources_1/bd/design_2/ipshared/1313/hdl" --include "../../../../debug_prog.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../debug_prog.srcs/sources_1/bd/design_1/ipshared/02c8/hdl/verilog" --include "../../../../debug_prog.srcs/sources_1/bd/design_1/ipshared/1313/hdl" --include "D:/Xilinx/Vivado/2017.4/data/xilinx_vip/include" \
+"../../../../debug_prog.srcs/sources_1/new/cam_reg_config.v" \
+"../../../../debug_prog.srcs/sources_1/new/camera_reg.v" \
+"../../../../debug_prog.srcs/sources_1/new/sccb_interface.v" \
+"../../../../debug_prog.ip_user_files/bd/design_2/ip/design_2_cam_reg_config_0_0/sim/design_2_cam_reg_config_0_0.v" \
+"../../../../debug_prog.ip_user_files/bd/design_2/ip/design_2_camera_reg_0_0/sim/design_2_camera_reg_0_0.v" \
+"../../../../debug_prog.ip_user_files/bd/design_2/ip/design_2_sccb_interface_0_0/sim/design_2_sccb_interface_0_0.v" \
+"../../../../debug_prog.ip_user_files/bd/design_2/sim/design_2.v" \
+"../../../../debug_prog.ip_user_files/bd/design_2/ip/design_2_processing_system7_0_0/sim/design_2_processing_system7_0_0.v" \
+"../../../../debug_prog.srcs/sources_1/bd/design_2/hdl/design_2_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

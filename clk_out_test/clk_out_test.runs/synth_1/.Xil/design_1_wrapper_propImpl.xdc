@@ -1,0 +1,5 @@
+set_property SRC_FILE_INFO {cfile:C:/Users/vhall/Desktop/clk_out_test/clk_out_test.srcs/constrs_1/new/constr.xdc rfile:../../../clk_out_test.srcs/constrs_1/new/constr.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
+set_property IOSTANDARD LVCMOS18 [get_ports FCLK_CLK0_0]
+set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN B19 [get_ports FCLK_CLK0_0]

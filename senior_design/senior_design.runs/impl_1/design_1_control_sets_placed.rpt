@@ -1,0 +1,84 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue Jan 30 21:31:12 2018
+| Host         : DESKTOP-VPQ35UP running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file design_1_control_sets_placed.rpt
+| Design       : design_1
+| Device       : xc7z020
+-------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    17 |
+| Unused register locations in slices containing registers |    60 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              55 |           21 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              67 |           18 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              10 |            3 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------------------------+-------------------------------------+--------------------------------------+------------------+----------------+
+|                      Clock Signal                      |            Enable Signal            |           Set/Reset Signal           | Slice Load Count | Bel Load Count |
++--------------------------------------------------------+-------------------------------------+--------------------------------------+------------------+----------------+
+|  pclk_0_IBUF                                           |                                     |                                      |                1 |              1 |
+|  camera_receiver_0/inst/write_en_reg_i_1_n_0           |                                     |                                      |                1 |              1 |
+|  camera_receiver_0/inst/byte_num_reg_i_2_n_0           |                                     |                                      |                1 |              1 |
+|  camera_receiver_0/inst/state_reg_i_2_n_0              |                                     |                                      |                1 |              1 |
+|  processing_system7_0/inst/FCLK_CLK0                   | sccb_0/inst/state[3]_i_1_n_0        |                                      |                1 |              4 |
+|  processing_system7_0/inst/FCLK_CLK0                   | sccb_0/inst/i[3]_i_1_n_0            |                                      |                1 |              4 |
+|  processing_system7_0/inst/FCLK_CLK0                   | sccb_0/inst/state_return[3]_i_1_n_0 |                                      |                1 |              4 |
+|  processing_system7_0/inst/FCLK_CLK0                   |                                     |                                      |                2 |              5 |
+|  processing_system7_0/inst/FCLK_CLK0                   | sccb_0/inst/wait_time[5]_i_1_n_0    |                                      |                3 |              6 |
+|  camera_receiver_0/inst/_inferred__0/i__n_0            |                                     |                                      |                2 |              8 |
+|  processing_system7_0/inst/FCLK_CLK0                   | sccb_0/inst/reg_loc_val[7]_i_1_n_0  |                                      |                3 |              8 |
+|  processing_system7_0/inst/FCLK_CLK0                   | sccb_0/inst/reg_loc[7]_i_1_n_0      |                                      |                1 |              8 |
+|  processing_system7_0/inst/FCLK_CLK0                   | sccb_0/inst/tx_data[7]_i_1_n_0      |                                      |                2 |              8 |
+|  pclk_0_IBUF                                           | rgb2gray_0/inst/count[0]            |                                      |                3 |              9 |
+|  pclk_0_IBUF                                           | rgb2gray_0/inst/count[0]            | rgb2gray_0/inst/read_loc[10]_i_1_n_0 |                3 |             10 |
+|  processing_system7_0/inst/FCLK_CLK0                   | sccb_0/inst/data_0                  |                                      |                3 |             16 |
+|  camera_receiver_0/inst/pixel_data_out_reg[15]_i_1_n_0 |                                     |                                      |               13 |             38 |
++--------------------------------------------------------+-------------------------------------+--------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     4 |
+| 4      |                     3 |
+| 5      |                     1 |
+| 6      |                     1 |
+| 8      |                     4 |
+| 9      |                     1 |
+| 10     |                     1 |
+| 16+    |                     2 |
++--------+-----------------------+
+
+

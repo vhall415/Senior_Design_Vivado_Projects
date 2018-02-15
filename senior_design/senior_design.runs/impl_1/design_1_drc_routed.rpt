@@ -1,0 +1,67 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue Jan 30 21:32:00 2018
+| Host         : DESKTOP-VPQ35UP running 64-bit major release  (build 9200)
+| Command      : report_drc -file design_1_drc_routed.rpt -pb design_1_drc_routed.pb -rpx design_1_drc_routed.rpx
+| Design       : design_1
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 6
++----------+----------+---------------------------------+------------+
+| Rule     | Severity | Description                     | Violations |
++----------+----------+---------------------------------+------------+
+| PDRC-153 | Warning  | Gated clock check               | 5          |
+| RPBF-3   | Warning  | IO port buffering is incomplete | 1          |
++----------+----------+---------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PDRC-153#1 Warning
+Gated clock check  
+Net camera_receiver_0/inst/_inferred__0/i__n_0 is a gated clock net sourced by a combinational pin camera_receiver_0/inst/_inferred__0/i_/O, cell camera_receiver_0/inst/_inferred__0/i_. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net camera_receiver_0/inst/byte_num_reg_i_2_n_0 is a gated clock net sourced by a combinational pin camera_receiver_0/inst/byte_num_reg_i_2/O, cell camera_receiver_0/inst/byte_num_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net camera_receiver_0/inst/pixel_data_out_reg[15]_i_1_n_0 is a gated clock net sourced by a combinational pin camera_receiver_0/inst/pixel_data_out_reg[15]_i_1/O, cell camera_receiver_0/inst/pixel_data_out_reg[15]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net camera_receiver_0/inst/state_reg_i_2_n_0 is a gated clock net sourced by a combinational pin camera_receiver_0/inst/state_reg_i_2/O, cell camera_receiver_0/inst/state_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net camera_receiver_0/inst/write_en_reg_i_1_n_0 is a gated clock net sourced by a combinational pin camera_receiver_0/inst/write_en_reg_i_1/O, cell camera_receiver_0/inst/write_en_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+RPBF-3#1 Warning
+IO port buffering is incomplete  
+Device port sda_0 expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+

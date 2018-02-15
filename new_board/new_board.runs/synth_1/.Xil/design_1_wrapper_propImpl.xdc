@@ -1,0 +1,7 @@
+set_property SRC_FILE_INFO {cfile:C:/Users/vhall/Desktop/new_board/new_board.srcs/constrs_3/new/artix7_constr.xdc rfile:../../../new_board.srcs/constrs_3/new/artix7_constr.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN A13 [get_ports scl_0]
+set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN A14 [get_ports sda_0]
+set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN F4 [get_ports sys_clock]

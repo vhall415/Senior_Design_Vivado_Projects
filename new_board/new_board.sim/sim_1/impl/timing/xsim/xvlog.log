@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vhall/Desktop/new_board/new_board.sim/sim_1/impl/timing/xsim/design_1_wrapper_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1
+INFO: [VRFC 10-311] analyzing module design_1_cam_reg_config_0_0
+INFO: [VRFC 10-311] analyzing module design_1_cam_reg_config_0_0_cam_reg_config
+INFO: [VRFC 10-311] analyzing module design_1_camera_reg_0_0
+INFO: [VRFC 10-311] analyzing module design_1_camera_reg_0_0_camera_reg
+INFO: [VRFC 10-311] analyzing module design_1_clk_wiz_0_1
+INFO: [VRFC 10-311] analyzing module design_1_clk_wiz_0_1_design_1_clk_wiz_0_1_clk_wiz
+INFO: [VRFC 10-311] analyzing module design_1_sccb_interface_0_0
+INFO: [VRFC 10-311] analyzing module design_1_sccb_interface_0_0_sccb_interface
+INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-311] analyzing module glbl

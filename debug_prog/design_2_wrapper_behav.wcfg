@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="design_2_wrapper_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_vip_pkg" />
+            <top_module name="design_2_wrapper" />
+            <top_module name="glbl" />
+            <top_module name="std" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="4954377870000fs"></ZoomStartTime>
+      <ZoomEndTime time="5031277870001fs"></ZoomEndTime>
+      <Cursor1Time time="5028315379000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="129"></NameColumnWidth>
+      <ValueColumnWidth column_width="146"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/design_2_wrapper/scl_0" type="logic">
+      <obj_property name="ElementShortName">scl_0</obj_property>
+      <obj_property name="ObjectShortName">scl_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/sda_0" type="logic">
+      <obj_property name="ElementShortName">sda_0</obj_property>
+      <obj_property name="ObjectShortName">sda_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/processing_system7_0/inst/gen_clk/fclk_clk0" type="logic">
+      <obj_property name="ElementShortName">fclk_clk0</obj_property>
+      <obj_property name="ObjectShortName">fclk_clk0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/sccb_interface_0/inst/tx_data" type="array">
+      <obj_property name="ElementShortName">tx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/sccb_interface_0/inst/addr" type="array">
+      <obj_property name="ElementShortName">addr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/sccb_interface_0/inst/data" type="array">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/sccb_interface_0/inst/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/sccb_interface_0/inst/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/cam_reg_config_0/inst/reg_data" type="array">
+      <obj_property name="ElementShortName">reg_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/cam_reg_config_0/inst/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/cam_reg_config_0/inst/sccb_start" type="logic">
+      <obj_property name="ElementShortName">sccb_start</obj_property>
+      <obj_property name="ObjectShortName">sccb_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/cam_reg_config_0/inst/sccb_busy" type="logic">
+      <obj_property name="ElementShortName">sccb_busy</obj_property>
+      <obj_property name="ObjectShortName">sccb_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/cam_reg_config_0/inst/sccb_ready" type="logic">
+      <obj_property name="ElementShortName">sccb_ready</obj_property>
+      <obj_property name="ObjectShortName">sccb_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/cam_reg_config_0/inst/loc" type="array">
+      <obj_property name="ElementShortName">loc[7:0]</obj_property>
+      <obj_property name="ObjectShortName">loc[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_2_wrapper/design_2_i/cam_reg_config_0/inst/reg_loc" type="array">
+      <obj_property name="ElementShortName">reg_loc[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_loc[7:0]</obj_property>
+   </wvobject>
+</wave_config>
