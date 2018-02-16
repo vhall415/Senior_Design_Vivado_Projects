@@ -90,7 +90,7 @@ module top(
          
      camera_receiver receive1
         (// Facing camera
-         .clk(divided_clk),
+         .clk_in(divided_clk),
          .cam_byte(cam_byte),
          .pclk(pclk), 
          .vsync(vsync),
@@ -98,8 +98,7 @@ module top(
          .xclk(xclk),
          // Facing system
          .pixel_data_out(rgb_pixel),
-         .write_en(write_en),
-         .clk_out(divided_clk)
+         .write_en(write_en)
          );
          
      async_fifo #(.datawidth(16), .DATADEPTH(128)) bram1    // depth to hold one frame

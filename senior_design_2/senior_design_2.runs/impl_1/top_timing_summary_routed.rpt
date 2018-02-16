@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Sat Feb 10 11:35:26 2018
+| Date         : Thu Feb 15 22:40:01 2018
 | Host         : DESKTOP-VPQ35UP running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file top_timing_summary_routed.rpt -rpx top_timing_summary_routed.rpx -warn_on_violation
 | Design       : top
@@ -52,7 +52,27 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 86 register/latch pins with no clock driven by root clock pin: div1/clk_out_reg/Q (HIGH)
+ There are 26 register/latch pins with no clock driven by root clock pin: href (HIGH)
+
+ There are 26 register/latch pins with no clock driven by root clock pin: pclk (HIGH)
+
+ There are 27 register/latch pins with no clock driven by root clock pin: vsync (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: bram1/pRead_counter/graycount_reg[5]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: bram1/pRead_counter/graycount_reg[6]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: bram1/pWrite_counter/graycount_reg[5]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: bram1/pWrite_counter/graycount_reg[6]/Q (HIGH)
+
+ There are 127 register/latch pins with no clock driven by root clock pin: div1/clk_out_reg/Q (HIGH)
+
+ There are 24 register/latch pins with no clock driven by root clock pin: receive1/byte_num_reg/Q (HIGH)
+
+ There are 27 register/latch pins with no clock driven by root clock pin: receive1/reset_reg/Q (HIGH)
+
+ There are 26 register/latch pins with no clock driven by root clock pin: receive1/state_reg/Q (HIGH)
 
 
 2. checking constant_clock
@@ -67,21 +87,21 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 185 pins that are not constrained for maximum delay. (HIGH)
+ There are 336 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
 5. checking no_input_delay
 --------------------------
- There are 0 input ports with no input delay specified.
+ There are 9 input ports with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
 6. checking no_output_delay
 ---------------------------
- There are 2 ports with no output delay specified. (HIGH)
+ There are 11 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -115,7 +135,7 @@ Table of Contents
 
 12. checking latch_loops
 ------------------------
- There are 0 combinational latch loops in the design through latch input
+ There are 2 combinational latch loops in the design through latch input (HIGH)
 
 
 
@@ -336,7 +356,7 @@ Slack (MET) :             0.280ns  (arrival time - required time)
     SLICE_X52Y96         FDRE                                         r  div1/clk_out_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X52Y96         FDRE (Prop_fdre_C_Q)         0.141     1.614 r  div1/clk_out_reg/Q
-                         net (fo=2, routed)           0.185     1.799    div1/clk
+                         net (fo=2, routed)           0.185     1.799    div1/xclk_OBUF
     SLICE_X52Y96         LUT3 (Prop_lut3_I0_O)        0.045     1.844 r  div1/clk_out_i_1/O
                          net (fo=1, routed)           0.000     1.844    div1/clk_out_i_1_n_0
     SLICE_X52Y96         FDRE                                         r  div1/clk_out_reg/D
@@ -423,21 +443,21 @@ Sources:            { sys_clk }
 
 Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
 Min Period        n/a     BUFG/I   n/a            2.155         10.000      7.845      BUFGCTRL_X0Y16  sys_clk_IBUF_BUFG_inst/I
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X52Y96    div1/reset_reg/C
 Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X52Y96    div1/clk_out_reg/C
 Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X52Y96    div1/count_reg[0]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/reset_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X52Y96    div1/reset_reg/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/clk_out_reg/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/count_reg[0]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/reset_reg/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/reset_reg/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/clk_out_reg/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/count_reg[0]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/reset_reg/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/reset_reg/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/clk_out_reg/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/count_reg[0]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/reset_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/reset_reg/C
 High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/clk_out_reg/C
 High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/count_reg[0]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X52Y96    div1/reset_reg/C
 
 
 

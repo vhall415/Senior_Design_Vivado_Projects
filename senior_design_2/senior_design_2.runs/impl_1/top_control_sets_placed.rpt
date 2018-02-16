@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Sat Feb 10 11:33:30 2018
+| Date         : Thu Feb 15 22:38:17 2018
 | Host         : DESKTOP-VPQ35UP running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    12 |
-| Unused register locations in slices containing registers |    32 |
+| Number of unique control sets                            |    24 |
+| Unused register locations in slices containing registers |    84 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,46 +33,59 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              13 |            4 |
-| No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              58 |           23 |
+| No           | No                    | No                     |              29 |           12 |
+| No           | No                    | Yes                    |               2 |            2 |
+| No           | Yes                   | No                     |              18 |            6 |
+| Yes          | No                    | No                     |              90 |           26 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              17 |            5 |
+| Yes          | Yes                   | No                     |              17 |            4 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+--------------------+-------------------------------+------------------+------------------+----------------+
-|    Clock Signal    |         Enable Signal         | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+--------------------+-------------------------------+------------------+------------------+----------------+
-|  clk_BUFG          | sccb1/scl_i_1_n_0             | sccb1/scl_reg_0  |                1 |              1 |
-|  sys_clk_IBUF_BUFG |                               |                  |                1 |              3 |
-|  clk_BUFG          | sccb1/i                       |                  |                1 |              4 |
-|  clk_BUFG          | sccb1/state_return            |                  |                3 |              4 |
-|  clk_BUFG          | sccb1/state                   |                  |                3 |              4 |
-|  clk_BUFG          | sccb1/wait_time[5]_i_1_n_0    |                  |                4 |              6 |
-|  clk_BUFG          | config1/loc                   |                  |                2 |              8 |
-|  clk_BUFG          | config1/wait_time             |                  |                4 |              8 |
-|  clk_BUFG          | sccb1/tx_data                 |                  |                2 |              8 |
-|  clk_BUFG          |                               |                  |                3 |             10 |
-|  clk_BUFG          | config1/addr_data[15]_i_1_n_0 | sccb1/scl_reg_0  |                4 |             16 |
-|  clk_BUFG          | sccb1/addr_0                  |                  |                4 |             16 |
-+--------------------+-------------------------------+------------------+------------------+----------------+
++------------------------------------------+-------------------------------+----------------------------------+------------------+----------------+
+|               Clock Signal               |         Enable Signal         |         Set/Reset Signal         | Slice Load Count | Bel Load Count |
++------------------------------------------+-------------------------------+----------------------------------+------------------+----------------+
+|  bram1/pWrite_counter/set_Status         |                               | bram1/pWrite_counter/empty_reg   |                1 |              1 |
+|  receive1/state_reg_i_2_n_0              |                               |                                  |                1 |              1 |
+|  receive1/write_en_reg_i_2_n_0           |                               | receive1/reset                   |                1 |              1 |
+|  receive1/reset                          |                               |                                  |                1 |              1 |
+|  receive1/byte_num_reg_i_2_n_0           |                               |                                  |                1 |              1 |
+|  xclk_OBUF_BUFG                          | sccb1/scl_i_1_n_0             | sccb1/scl_reg_0                  |                1 |              1 |
+| ~xclk_OBUF_BUFG                          |                               | bram1/pWrite_counter/presetEmpty |                1 |              1 |
+| ~xclk_OBUF_BUFG                          |                               | bram1/pWrite_counter/presetFull  |                1 |              1 |
+|  sys_clk_IBUF_BUFG                       |                               |                                  |                1 |              3 |
+|  xclk_OBUF_BUFG                          | sccb1/state_return            |                                  |                1 |              4 |
+|  xclk_OBUF_BUFG                          | sccb1/state_0                 |                                  |                1 |              4 |
+|  xclk_OBUF_BUFG                          | sccb1/i                       |                                  |                2 |              4 |
+|  xclk_OBUF_BUFG                          | config1/wait_time             |                                  |                2 |              6 |
+|  xclk_OBUF_BUFG                          | sccb1/wait_time[5]_i_1_n_0    |                                  |                3 |              6 |
+|  receive1/pixel_reg[15]_i_1_n_0          |                               |                                  |                2 |              8 |
+|  xclk_OBUF_BUFG                          | config1/loc                   |                                  |                2 |              8 |
+|  xclk_OBUF_BUFG                          | gray1/gray[7]_i_1_n_0         |                                  |                3 |              8 |
+|  xclk_OBUF_BUFG                          | sccb1/tx_data                 |                                  |                4 |              8 |
+| ~xclk_OBUF_BUFG                          | receive1/NextWriteAddr_en     |                                  |                3 |             13 |
+| ~xclk_OBUF_BUFG                          | gray1/outputData0             |                                  |                2 |             13 |
+|  xclk_OBUF_BUFG                          |                               |                                  |                6 |             15 |
+|  receive1/pixel_data_out_reg[15]_i_1_n_0 |                               | receive1/reset                   |                4 |             16 |
+|  xclk_OBUF_BUFG                          | config1/addr_data[15]_i_1_n_0 | sccb1/scl_reg_0                  |                3 |             16 |
+|  xclk_OBUF_BUFG                          | sccb1/addr_1                  |                                  |                3 |             16 |
++------------------------------------------+-------------------------------+----------------------------------+------------------+----------------+
 
 
 +--------+-----------------------+
 | Fanout | Number of ControlSets |
 +--------+-----------------------+
-| 1      |                     1 |
+| 1      |                     8 |
 | 3      |                     1 |
 | 4      |                     3 |
-| 6      |                     1 |
-| 8      |                     3 |
-| 10     |                     1 |
-| 16+    |                     2 |
+| 6      |                     2 |
+| 8      |                     4 |
+| 13     |                     2 |
+| 15     |                     1 |
+| 16+    |                     3 |
 +--------+-----------------------+
 
 
