@@ -22,8 +22,11 @@
 
 module top(
     input wire sys_clk,
-    output wire scl,
-    inout wire sda
+    input wire cam_byte,
+    input wire pclk,
+    input wire vsync,
+    input wire href,
+    output wire [7:0] gray_byte
     );
     
     wire divided_clk;
@@ -34,6 +37,15 @@ module top(
     wire sccb_start;
     wire [7:0] reg_data_loc;
     wire [15:0] sccb_reg_data;
+    wire scl;
+    wire sda;
+    reg global_reset;
+    wire [15:0] rgb_pixel;
+    wire write_en;
+    wire gray1_clk_out;
+    wire read_en;
+    wire bram1_empty;
+    wire [15:0] bram_pixel;
     
     clk_div #(.DIVIDER(2)) div1 // divide 100MHz clk by 4 to get 25MHz clk
         (// inputs
@@ -62,7 +74,7 @@ module top(
          .addr_data(cam_reg_data)   // connected from here to reg config
          );
         
-    sccb_interface sccb1
+    sccb sccb1
         (// inputs
          .clk(divided_clk),
          .start(sccb_start),   // start tx
@@ -73,5 +85,44 @@ module top(
          .ready_out(sccb_ready),   // ready to recieve new tx data
          .scl(scl),
          .sda(sda) // change to output only if causing errors
+         );
+         
+     camera_receiver receive1
+        (// Facing camera
+         .cam_byte(cam_byte),
+         .pclk(pclk), 
+         .vsync(vsync),
+         .href(href),
+         .xclk(divided_clk),
+         // Facing system
+         .pixel_data_out(rgb_pixel),
+         .write_en(write_en),
+         .clk_out(divided_clk)
+         );
+         
+     async_fifo #(.datawidth(16), .DATADEPTH(307_200)) bram1    // depth to hold one frame
+        (.reset(global_reset),
+         // Reading by rgb2gray
+         .read_clk(divided_clk),
+         .read_en(read_en),
+         .outputData(bram_pixel),
+         // Writing by camera receiver
+         .write_clk(divided_clk),
+         .write_en(write_en),
+         .inputData(rgb_pixel),
+         // Fifo specific
+         .full(),
+         .empty(bram1_empty)
+         );
+         
+     rgb2gray gray1
+        (// Inputs
+         .pixel_data_in(bram_pixel),
+         .clk_in(divided_clk),
+         .empty(bram1_empty),
+         // Outputs
+         .gray(gray_byte),
+         .read_en(read_en),
+         .clk_out(gray1_clk_out)
          );
 endmodule
