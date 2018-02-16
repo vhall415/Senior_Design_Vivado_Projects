@@ -22,10 +22,13 @@
 
 module top(
     input wire sys_clk,
-    input wire cam_byte,
+    input wire [7:0] cam_byte,
     input wire pclk,
     input wire vsync,
     input wire href,
+    output wire xclk,
+    output wire scl,
+    inout wire sda,
     output wire [7:0] gray_byte
     );
     
@@ -37,8 +40,6 @@ module top(
     wire sccb_start;
     wire [7:0] reg_data_loc;
     wire [15:0] sccb_reg_data;
-    wire scl;
-    wire sda;
     reg global_reset;
     wire [15:0] rgb_pixel;
     wire write_en;
@@ -89,18 +90,19 @@ module top(
          
      camera_receiver receive1
         (// Facing camera
+         .clk(divided_clk),
          .cam_byte(cam_byte),
          .pclk(pclk), 
          .vsync(vsync),
          .href(href),
-         .xclk(divided_clk),
+         .xclk(xclk),
          // Facing system
          .pixel_data_out(rgb_pixel),
          .write_en(write_en),
          .clk_out(divided_clk)
          );
          
-     async_fifo #(.datawidth(16), .DATADEPTH(307_200)) bram1    // depth to hold one frame
+     async_fifo #(.datawidth(16), .DATADEPTH(128)) bram1    // depth to hold one frame
         (.reset(global_reset),
          // Reading by rgb2gray
          .read_clk(divided_clk),

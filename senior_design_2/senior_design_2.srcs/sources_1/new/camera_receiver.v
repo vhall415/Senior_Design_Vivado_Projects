@@ -24,6 +24,7 @@
 
 module camera_receiver (
     // Facing Camera
+    input wire clk_in,
     input wire [7:0] cam_byte,
     input wire pclk,
     input wire vsync,
@@ -33,14 +34,8 @@ module camera_receiver (
     // Facing System
     //input wire sys_clk,	// not needed?
     output reg [15:0] pixel_data_out,
-    output reg write_en,
-    output wire clk_out	// not needed?
+    output reg write_en
     );
-
-    initial begin
-        pixel_data_out = 0;
-        write_en = 0;
-    end
 
     localparam FRAME_START = 0;
     localparam PIXEL = 1;
@@ -48,41 +43,48 @@ module camera_receiver (
     reg [15:0] pixel = 0;
     reg byte_num = 0;
     reg state = FRAME_START;
+    reg reset = 1;
 	 
-	assign xclk = pclk;
-	assign clk_out = pclk;
+	assign xclk = clk_in;
 	
     always @(pclk) begin
-        case(state)
-            FRAME_START: begin
-                if(vsync == 0) begin    // valid frame
-                    state = PIXEL;
-                    byte_num = 0;
+        if(reset) begin
+            pixel_data_out <= 0;
+            write_en <= 0;
+            reset <= 0;
+        end
+        else begin
+            case(state)
+                FRAME_START: begin
+                    if(vsync == 0) begin    // valid frame
+                        state = PIXEL;
+                        byte_num = 0;
+                    end
                 end
-            end
-
-            PIXEL: begin
-                if(vsync == 1) begin    // end frame
-                    state = FRAME_START;
-                    write_en = 0;
-                end
-                else begin  // still in frame
-                    if(href == 1) begin // valid line
-                        if(pclk == 1) begin	// rising edge sends byte
-                            if(byte_num == 0) begin // first byte (R3:0 G5:3)
-                                write_en = 0;
-                                pixel[15:8] = cam_byte;
+    
+                PIXEL: begin
+                    if(vsync == 1) begin    // end frame
+                        state = FRAME_START;
+                        write_en = 0;
+                    end
+                    else begin  // still in frame
+                        if(href == 1) begin // valid line
+                            if(pclk == 1) begin	// rising edge sends byte
+                                if(byte_num == 0) begin // first byte (R3:0 G5:3)
+                                    write_en = 0;
+                                    pixel[15:8] = cam_byte;
+                                end
+                                else begin  // second byte (G2:0 B3:0)
+                                     pixel[7:0] = cam_byte;
+                                     pixel_data_out = pixel; // output finished pixel data
+                                     write_en = 1;
+                                end
+                                byte_num = ~byte_num;   // switch to next byte val
                             end
-                            else begin  // second byte (G2:0 B3:0)
-                                 pixel[7:0] = cam_byte;
-                                 pixel_data_out = pixel; // output finished pixel data
-                                 write_en = 1;
-                            end
-                            byte_num = ~byte_num;   // switch to next byte val
                         end
                     end
                 end
-            end
-        endcase
+            endcase
+        end
     end
 endmodule 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1518290976">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1518762615">
   <File Type="PWROPT-DCP" Name="top_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="top.tcl"/>
@@ -65,37 +65,61 @@
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/imports/new/cam_reg_config.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/async_fifo.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../new_board/new_board.srcs/sources_1/imports/new/cam_reg_config.v"/>
-        <Attr Name="ImportTime" Val="1518172525"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../0_Winter_2018_Courses/EE175/code/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v"/>
+        <Attr Name="ImportTime" Val="1518224427"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/camera_reg.v">
+    <File Path="$PSRCDIR/sources_1/new/cam_reg_config.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../new_board/new_board.srcs/sources_1/imports/new/camera_reg.v"/>
-        <Attr Name="ImportTime" Val="1518077838"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/clk_div.v">
+    <File Path="$PSRCDIR/sources_1/new/camera_receiver.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../senior_design/senior_design.srcs/sources_1/new/clk_div.v"/>
-        <Attr Name="ImportTime" Val="1516383349"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/sccb_interface.v">
+    <File Path="$PSRCDIR/sources_1/new/camera_reg.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../new_board/new_board.srcs/sources_1/imports/new/sccb_interface.v"/>
-        <Attr Name="ImportTime" Val="1518172586"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clk_div.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/graycounter.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../0_Winter_2018_Courses/EE175/code/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/graycounter.v"/>
+        <Attr Name="ImportTime" Val="1518224427"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/rgb2gray.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sccb.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -127,9 +151,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
