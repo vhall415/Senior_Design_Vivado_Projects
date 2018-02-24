@@ -1,0 +1,13 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vhall/Desktop/senior_design_2/senior_design_2.sim/sim_1/impl/func/xsim/sim_sccb1_func_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module async_fifo
+INFO: [VRFC 10-311] analyzing module cam_reg_config
+INFO: [VRFC 10-311] analyzing module camera_receiver
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-311] analyzing module graycounter
+INFO: [VRFC 10-311] analyzing module graycounter_0
+INFO: [VRFC 10-311] analyzing module rgb2gray
+INFO: [VRFC 10-311] analyzing module sccb
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vhall/Desktop/senior_design_2/senior_design_2.srcs/sim_1/new/sim_sccb1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_sccb1

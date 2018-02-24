@@ -27,24 +27,29 @@ module clk_div #(parameter DIVIDER = 10000)(
     output reg clk_out
     );
     
-    reg [$clog2(DIVIDER):0] count = 0;
-    reg reset = 1;
+    localparam INIT = 0;
+    localparam COUNT = 1;
     
-    always @(posedge clk_in) begin
-        if(reset) begin
-            reset <= 0;
-            clk_out <= 0;
-            count <= 0;
-        end
-        
-        else begin
-            if(count == DIVIDER-1) begin
-                clk_out <= ~clk_out;
-                count <= 0;
+    reg [$clog2(DIVIDER):0] count = 0;
+    reg state = INIT;
+    
+    always @(posedge clk_in) begin        
+        case(state)
+            INIT: begin
+               clk_out <= 0;
+               count <= 0;
+               state = COUNT;
             end
-            else begin
-                count <= count + 1;
+            
+            COUNT: begin
+                if(count == DIVIDER-1) begin
+                    clk_out <= ~clk_out;
+                    count <= 0;
+                end
+                else begin
+                    count <= count + 1;
+                end
             end
-        end
+        endcase
     end
 endmodule 

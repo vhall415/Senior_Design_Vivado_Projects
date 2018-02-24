@@ -1,0 +1,47 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 08deeb49691b48cea773850ad0abb475 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot sim_sccb1_func_impl xil_defaultlib.sim_sccb1 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDPE(IS_C_INVERTED=1'b1)
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.RB18_INTERNAL_VLOG(READ_WIDTH_A=...
+Compiling module unisims_ver.RAMB18E1(IS_CLKARDCLK_INVERTED=1...
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.FDRE(IS_C_INVERTED=1'b1)
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module xil_defaultlib.graycounter
+Compiling module xil_defaultlib.graycounter_0
+Compiling module unisims_ver.latchsre_ldce
+Compiling module unisims_ver.LDCE
+Compiling module xil_defaultlib.async_fifo
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.RB18_INTERNAL_VLOG(DOA_REG=1,RDA...
+Compiling module unisims_ver.RAMB18E1(DOA_REG=1,INIT_00=256'b...
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module xil_defaultlib.cam_reg_config
+Compiling module xil_defaultlib.clk_div
+Compiling module unisims_ver.CARRY4
+Compiling module xil_defaultlib.rgb2gray
+Compiling module unisims_ver.OBUF
+Compiling module unisims_ver.LDCE(INIT=1'b1)
+Compiling module xil_defaultlib.camera_receiver
+Compiling module unisims_ver.FDSE_default
+Compiling module unisims_ver.MUXF7
+Compiling module xil_defaultlib.sccb
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.sim_sccb1
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_sccb1_func_impl
