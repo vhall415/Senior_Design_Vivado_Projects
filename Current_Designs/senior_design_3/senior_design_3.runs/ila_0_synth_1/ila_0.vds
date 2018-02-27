@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue Feb 27 13:17:21 2018
+# Process ID: 5024
+# Current directory: C:/Users/vhall/Desktop/senior_design_3/senior_design_3.runs/ila_0_synth_1
+# Command line: vivado.exe -log ila_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ila_0.tcl
+# Log file: C:/Users/vhall/Desktop/senior_design_3/senior_design_3.runs/ila_0_synth_1/ila_0.vds
+# Journal file: C:/Users/vhall/Desktop/senior_design_3/senior_design_3.runs/ila_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source ila_0.tcl -notrace
+Command: synth_design -top ila_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 17516 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:38 ; elapsed = 00:00:50 . Memory (MB): peak = 413.012 ; gain = 129.203
+---------------------------------------------------------------------------------

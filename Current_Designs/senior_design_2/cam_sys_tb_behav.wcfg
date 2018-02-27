@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="cam_sys_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="cam_sys_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="8998548333333fs"></ZoomStartTime>
+      <ZoomEndTime time="8998994333334fs"></ZoomEndTime>
+      <Cursor1Time time="8998700000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="200"></NameColumnWidth>
+      <ValueColumnWidth column_width="74"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/cam_sys_tb/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/pcount" type="array">
+      <obj_property name="ElementShortName">pcount[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pcount[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/sys_clk" type="logic">
+      <obj_property name="ElementShortName">sys_clk</obj_property>
+      <obj_property name="ObjectShortName">sys_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/cam_byte" type="array">
+      <obj_property name="ElementShortName">cam_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cam_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/pclk" type="logic">
+      <obj_property name="ElementShortName">pclk</obj_property>
+      <obj_property name="ObjectShortName">pclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/vsync" type="logic">
+      <obj_property name="ElementShortName">vsync</obj_property>
+      <obj_property name="ObjectShortName">vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/href" type="logic">
+      <obj_property name="ElementShortName">href</obj_property>
+      <obj_property name="ObjectShortName">href</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/xclk" type="logic">
+      <obj_property name="ElementShortName">xclk</obj_property>
+      <obj_property name="ObjectShortName">xclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/scl" type="logic">
+      <obj_property name="ElementShortName">scl</obj_property>
+      <obj_property name="ObjectShortName">scl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/sda" type="logic">
+      <obj_property name="ElementShortName">sda</obj_property>
+      <obj_property name="ObjectShortName">sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/cam_gray_byte" type="array">
+      <obj_property name="ElementShortName">cam_gray_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cam_gray_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/cam1/cam1/sccb1/ready_out" type="logic">
+      <obj_property name="ElementShortName">ready_out</obj_property>
+      <obj_property name="ObjectShortName">ready_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/cam1/cam1/sccb1/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cam_sys_tb/cam1/cam1/sccb1/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+</wave_config>

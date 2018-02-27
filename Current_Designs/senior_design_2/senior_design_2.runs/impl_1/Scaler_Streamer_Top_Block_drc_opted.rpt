@@ -1,0 +1,51 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue Feb 27 00:42:36 2018
+| Host         : DESKTOP-VPQ35UP running 64-bit major release  (build 9200)
+| Command      : report_drc -file Scaler_Streamer_Top_Block_drc_opted.rpt -pb Scaler_Streamer_Top_Block_drc_opted.pb -rpx Scaler_Streamer_Top_Block_drc_opted.rpx
+| Design       : Scaler_Streamer_Top_Block
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Synthesized
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 3
++-----------+----------+----------------------------+------------+
+| Rule      | Severity | Description                | Violations |
++-----------+----------+----------------------------+------------+
+| REQP-1840 | Warning  | RAMB18 async control check | 3          |
++-----------+----------+----------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+REQP-1840#1 Warning
+RAMB18 async control check  
+The RAMB18E1 controller/dataTxFifo/memory_reg has an input control pin controller/dataTxFifo/memory_reg/ENBWREN (net: controller/dataTxFifo/pRead_counter_n_10) which is driven by a register (controller/dataTxFifo/empty_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#2 Warning
+RAMB18 async control check  
+The RAMB18E1 controller/dataTxFifo/memory_reg has an input control pin controller/dataTxFifo/memory_reg/WEA[0] (net: controller/dataTxFifo/memory_reg_i_4_n_0) which is driven by a register (controller/dataTxFifo/full_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#3 Warning
+RAMB18 async control check  
+The RAMB18E1 controller/dataTxFifo/memory_reg has an input control pin controller/dataTxFifo/memory_reg/WEA[1] (net: controller/dataTxFifo/memory_reg_i_4_n_0) which is driven by a register (controller/dataTxFifo/full_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+

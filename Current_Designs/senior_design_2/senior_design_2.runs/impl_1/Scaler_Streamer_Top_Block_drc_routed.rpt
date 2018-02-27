@@ -1,0 +1,93 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue Feb 27 00:44:18 2018
+| Host         : DESKTOP-VPQ35UP running 64-bit major release  (build 9200)
+| Command      : report_drc -file Scaler_Streamer_Top_Block_drc_routed.rpt -pb Scaler_Streamer_Top_Block_drc_routed.pb -rpx Scaler_Streamer_Top_Block_drc_routed.rpx
+| Design       : Scaler_Streamer_Top_Block
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 11
++-----------+----------+----------------------------+------------+
+| Rule      | Severity | Description                | Violations |
++-----------+----------+----------------------------+------------+
+| PDRC-153  | Warning  | Gated clock check          | 7          |
+| REQP-1840 | Warning  | RAMB18 async control check | 3          |
+| RTSTAT-10 | Warning  | No routable loads          | 1          |
++-----------+----------+----------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PDRC-153#1 Warning
+Gated clock check  
+Net controller/OE_reg_i_2_n_0 is a gated clock net sourced by a combinational pin controller/OE_reg_i_2/O, cell controller/OE_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net controller/RD_reg_i_2_n_0 is a gated clock net sourced by a combinational pin controller/RD_reg_i_2/O, cell controller/RD_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net controller/WR_reg_i_2_n_0 is a gated clock net sourced by a combinational pin controller/WR_reg_i_2/O, cell controller/WR_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net controller/dataRxFifo/pRead_counter/empty_reg is a gated clock net sourced by a combinational pin controller/dataRxFifo/pRead_counter/status_reg_i_1/O, cell controller/dataRxFifo/pRead_counter/status_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net controller/dataTxFifo/pRead_counter/full_reg is a gated clock net sourced by a combinational pin controller/dataTxFifo/pRead_counter/status_reg_i_1__0/O, cell controller/dataTxFifo/pRead_counter/status_reg_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net controller/sendData_reg_i_2_n_0 is a gated clock net sourced by a combinational pin controller/sendData_reg_i_2/O, cell controller/sendData_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net global_rst_reg_i_2_n_0 is a gated clock net sourced by a combinational pin global_rst_reg_i_2/O, cell global_rst_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+REQP-1840#1 Warning
+RAMB18 async control check  
+The RAMB18E1 controller/dataTxFifo/memory_reg has an input control pin controller/dataTxFifo/memory_reg/ENBWREN (net: controller/dataTxFifo/pRead_counter_n_10) which is driven by a register (controller/dataTxFifo/empty_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#2 Warning
+RAMB18 async control check  
+The RAMB18E1 controller/dataTxFifo/memory_reg has an input control pin controller/dataTxFifo/memory_reg/WEA[0] (net: controller/dataTxFifo/memory_reg_i_4_n_0) which is driven by a register (controller/dataTxFifo/full_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#3 Warning
+RAMB18 async control check  
+The RAMB18E1 controller/dataTxFifo/memory_reg has an input control pin controller/dataTxFifo/memory_reg/WEA[1] (net: controller/dataTxFifo/memory_reg_i_4_n_0) which is driven by a register (controller/dataTxFifo/full_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+17 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/s_bscan_tms, debugger/inst/sync_reg3, debugger/inst/trig_out_ack_reg, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg[2], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg[2] (the first 15 of 15 listed).
+Related violations: <none>
+
+

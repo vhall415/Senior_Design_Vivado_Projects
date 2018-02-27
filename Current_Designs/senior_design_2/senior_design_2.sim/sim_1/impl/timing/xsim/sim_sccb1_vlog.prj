@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"sim_sccb1_time_impl.v" \
+"../../../../../senior_design_2.srcs/sim_1/new/sim_sccb1.v" \
+
+# Do not sort compile order
+nosort

@@ -26,44 +26,84 @@
 module rgb2gray (
     input wire [15:0] pixel_data_in,
     input wire clk_in,
-    input wire empty,
+    input wire full_pixel_rx,
+    
     output reg [7:0] gray,
-    output reg read_en,
+//    output reg new_gray_pixel,
     output wire clk_out
     );
     
+    localparam INIT = 0;
+    localparam RUN = 1;
+    
+    reg state = INIT;
     wire [7:0] red;
     wire [7:0] green;
     wire [7:0] blue;
-    reg [10:0] read_loc = 0;
+//    reg new_pixelr;
+//    reg new_pixelf;
+//    reg read_enr = 0;
+//    reg read_enf = 0;
+    
     reg [1:0] count = 0;
     
     assign clk_out = clk_in;
+//    assign new_pixel = new_pixelr ^ new_pixelf;
+//    assign read_en = read_enr & read_enf;
     
     // Apply MSB to top bits
-    assign red[7:3] = pixel_data_in[15:11];
+    assign red = {pixel_data_in[15:11], 2'b00};//pixel_data_in[15:13]};
     // Append MSB of R pixel Data to LSB of Red
-    assign red[2:0] = pixel_data_in[15:13];
+//    assign red[2:0] = 0;
     
     // Now do the green
-    assign green[7:2] = pixel_data_in[10:5];
-    assign green[1:0] = pixel_data_in[10:9];
+    assign green = {pixel_data_in[10:5], pixel_data_in[10:9]};
+//    assign green[1:0] = 0;
+    
     // Now the blue
-    assign blue[7:3] = pixel_data_in[5:0];
-    assign blue[2:0] = pixel_data_in[5:3];
+    assign blue = {pixel_data_in[5:0], pixel_data_in[5:3]};
+//    assign blue[2:0] = 0;
+
+//    assign red = pixel_data_in[15:11];
+//    assign green = pixel_data_in[10:5];
+//    assign blue = pixel_data_in[4:0];
         
-    always @(posedge clk_in)
-    begin
-        if(~empty) begin
-            if(count == 0) begin
-                count <= count + 1;
-                read_en <= 1;
+    always @(posedge clk_in) begin // read posedge
+        case(state)
+            INIT: begin
+                gray <= 0;
+                state <= RUN;
+//                new_pixelr <= 0;
             end
-            else begin
-                count = 0;
-                gray <= ((red + blue + green) / 3);
-                read_en <= 0;
-             end
-         end
+            
+            RUN: begin
+                if(full_pixel_rx) begin
+                    gray <= red;//((red + blue + green) / 3);
+                end
+            end
+            
+            default: begin
+                gray <= 0;
+                state <= RUN;
+            end
+        endcase
     end
+    
+//    always @(negedge clk_in) begin
+//            if(count == 0) begin
+//                read_enf <= 1;
+//            end
+//            else begin
+//                gray <= ((red + blue + green) / 3);
+//                read_enf <= 0;
+//             end
+////        if(read_enr == 1) begin
+//            read_enf <= 0;
+////            gray <= ((red + blue + green) / 3);
+//            new_pixelf <= 0;
+//        end
+//        else begin
+//            new_pixelf <= 1;
+//        end
+//    end
 endmodule 

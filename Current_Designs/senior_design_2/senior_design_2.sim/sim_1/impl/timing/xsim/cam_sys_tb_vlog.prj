@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"cam_sys_tb_time_impl.v" \
+"../../../../../senior_design_2.srcs/sim_1/new/receiver_tb.v" \
+"../../../../../senior_design_2.srcs/sim_1/new/sccb_tb.v" \
+"../../../../../senior_design_2.srcs/sim_1/new/cam1_gray_tb.v" \
+"../../../../../senior_design_2.srcs/sim_1/new/fifo_tb.v" \
+"../../../../../senior_design_2.srcs/sim_1/new/rgb_to_gray_tb.v" \
+"../../../../../senior_design_2.srcs/sim_1/new/cam_sys_tb.v" \
+
+# Do not sort compile order
+nosort

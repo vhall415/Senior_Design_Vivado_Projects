@@ -22,17 +22,18 @@
 
 module camera_top(
     input wire sys_clk,
-    input wire clk, // divided clk for system
+    input wire clk, // divided clk for system 25MHz
+    input wire start,
     input wire [7:0] cam_byte,
     input wire pclk,
     input wire vsync,
     input wire href,
     output wire xclk,
     output wire scl,
-    inout wire sda,
-    output wire [15:0] rgb_pixel,  // pixel data to store in bram
-    output wire write_en,    // write en for bram storage
-    output wire clk_out
+    output wire sda,
+    output wire [15:0] rgb_pixel,
+    output wire [7:0] gray_byte,
+    output wire gray_clk_out
     );
     
     // inner system wire connections
@@ -43,11 +44,15 @@ module camera_top(
     wire sccb_start;    // cam config output to sccb input
     wire [7:0] reg_data_loc;  // cam config output to cam reg input
     wire [15:0] sccb_reg_data; // addr and data value to tx; cam config output to sccb input
+//    wire [15:0] rgb_pixel;
+    wire clk_out;
+    wire full_pixel;
     
-    assign xclk = clk;
+    assign xclk = start ? clk : 1'b0;
     
     cam_reg_config config1
        (// inputs
+        .sys_clk(sys_clk),
         .clk(clk),
         .sccb_busy(sccb_busy),   // sccb busy tx-ing
         .sccb_ready(sccb_ready),
@@ -69,6 +74,7 @@ module camera_top(
         
     sccb sccb1
         (// inputs
+         .sys_clk(sys_clk),
          .clk(clk),
          .start(sccb_start),   // start tx
          .done(sccb_done),
@@ -82,17 +88,26 @@ module camera_top(
          
      camera_receiver receive1
         (// Facing camera
-         .clk_in(sys_clk),
-         .cam_byte(cam_byte),
          .pclk(pclk), 
          .vsync(vsync),
          .href(href),
+         .cam_byte(cam_byte),
 //         .xclk(xclk),
          // Facing system
          .sccb_done(sccb_done),
          .pixel_data_out(rgb_pixel),
-         .write_en(write_en),
-         .clk_out(clk_out)
+         .clk_out(clk_out),
+         .full_pixel_tx(full_pixel)
          );
+         
+         rgb2gray gray1
+             (// Inputs
+              .pixel_data_in(rgb_pixel),
+              .clk_in(clk_out),  // pclk
+              .full_pixel_rx(full_pixel),
+              // Outputs
+              .gray(gray_byte),
+              .clk_out(gray_clk_out)
+              );
          
 endmodule
